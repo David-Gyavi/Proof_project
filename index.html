@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html ang-app="myFirstApp" dir="ltr">
+  <html>
   <head>
     <meta charset="utf-8">
-    <script src="angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Angular</title>
+    <title>TilenApp</title>
   </head>
-  <body>
-      <h1>Hello Angular Developers. Am great that am enrolled in this program</h1>
-      <div ng-controller="myFirstController">
+  <body ng-app="TilenApp" ng-controller="GameController">
+    <div>
+      <div>
+        Guesses Left :: {{guesses}}
+      </div>
+      <div class="incorrectGuesses">
+        Your Incorrect guesses  :: <span ng-repeat="letter in incorrectLettersChosen">{{letter}}</span>
+      </div>
+      <div>
+        Your Correct guesses  :: <span ng-repeat="letter in correctLettersChosen">{{letter}}</span>
+      </div>
+      <div>Try to guess the Word: {{displayWord}} </div>
+      <div>
+
+        <div>
+          <input type="text" name="guess" ng-model="input.letter">
+          <button ng-click="letterChosen()">Submit</button>
+        </div>
 
       </div>
+
+    </div>
   </body>
 </html>
